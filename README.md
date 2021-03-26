@@ -6,7 +6,7 @@
 | --------           | ------  | -----------                   |
 | nickname           | string  | null: false                   |
 | email              | string  | null: false, uniqueness: true |
-| encrypted_password | string| | null: false                   |
+| encrypted_password | string  | null: false                   |
 | last_name          | string  | null: false                   |
 | first_name         | string  | null: false                   |
 | last_name_kana     | string  | null: false                   |
@@ -18,7 +18,7 @@
 
 - has_many :comments
 - has_many :products
-- has_one  :purchases histories
+- has_many :purchases histories
 
 
 
@@ -31,7 +31,7 @@
 ### Association
 
 - belongs_to :user
-- belongs_to :products
+- belongs_to :product
 
 ## products テーブル
 
@@ -55,19 +55,21 @@
 
 - has_many :comments
 - belongs_to :user
-
+- has_one :purchase history
 ## purchase histories テーブル
 
 | Column            | Type       | Options     |
 | -------           | ---------- | ----------- |
-| user_id           | references | null: false, foreign_key: true |
-| product_id        | references | null: false, foreign_key: true |
+| user              | references | null: false, foreign_key: true |
+| product           | references | null: false, foreign_key: true |
 
 
 
 ### Association
-
 - belongs_to :user
+- belongs_to :product
+- has_one    :purchase
+
 
 ## purchases テーブル
 
@@ -85,4 +87,4 @@
 
 ### Association
 
-- belongs_to :purchase_histories
+- belongs_to :purchase_history
