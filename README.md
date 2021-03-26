@@ -18,7 +18,7 @@
 
 - has_many :comments
 - has_many :products
-- has_many :purchases histories
+- has_many :purchases_histories
 
 
 
@@ -43,7 +43,7 @@
 | status_id        | integer    | null: false                    |
 | delivery_fee_id  |  integer   | null:false                     |
 | area_id          | integer    | null: false                    |
-| days_id          | integer    | null: false                    | 
+| day_id           | integer    | null: false                    | 
 | price            | integer    | null: false                    |
 | user             | references | null: false,foreign_key: true   |
 
@@ -55,8 +55,8 @@
 
 - has_many :comments
 - belongs_to :user
-- has_one :purchase history
-## purchase histories テーブル
+- has_one :purchase_history
+## purchase_histories テーブル
 
 | Column            | Type       | Options     |
 | -------           | ---------- | ----------- |
