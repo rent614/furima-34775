@@ -11,9 +11,8 @@
 | first_name     | string  | null: false                   |
 | last_name_kana | string  | null: false                   |
 | first_name_kana| string  | null: false                   |
-| birth_year     | integer | null: false                   |
-| birth_month    | integer | null: false                   |
-| birth_date     | integer | null: false                   |
+| birthday       | date    | null: false                  |
+
 
 ### Association
 
@@ -38,14 +37,13 @@
 
 | Column           | Type       | Options                        |
 | ------           | ---------- | ------------------------------ |
-| products_image   | references | null: false, foreign_key: true |
 | products_name    | string     | null: false                    |
 | description      | text       | null: false                    |
-| category         | string     | null: false                    |
-| status           | string     | null: false                    |
-| area             | string     | null: false                    |
-| days             | integer    | null: false                    | 
-| price            | integer    | null: false                    |
+| category_id      | integer    | null: false                    |
+| status_id        | integer    | null: false                    |
+| area_id          | integer    | null: false                    |
+| days_id          | integer    | null: false                    | 
+| price_i          | integer    | null: false                    |
 | user_id          | references | null: false, foreign_key: true |
 
 
@@ -58,10 +56,10 @@
 
 | Column            | Type       | Options     |
 | -------           | ---------- | ----------- |
-| info              | integer    | null: false |
-| month             | integer    | null: false |
-| year              | integer    | null: false |
-| security_code     | integer    | null: false |
+| user_id           | integer    | null: false |
+| customer_id       | string    | null: false, |
+| card_id           | string    | null: false |
+
 
 ### Association
 
@@ -71,13 +69,13 @@
 
 | Column           | Type       | Options                        |
 | ------           | ---------- | ------------------------------ |
-| postcode         | integer    | null: false                    |
+| postcode         | string     | null: false                    |
 | prefecture_id    | string     | null: false                    |
 | city             | string     | null: false                    |
 | block            | string     | null: false                    |
-| building         | string     | null: false                    |
-| phone_number     | integer    | null: false                    |
-| user_id          | references | null: false, foreign_key: true |
+| building         | string     |                    |
+| phone_number     | string     | null: false                    |
+| user             | references | null: false, foreign_key: true |
 
 
 
