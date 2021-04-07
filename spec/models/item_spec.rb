@@ -78,27 +78,27 @@ describe Item, type: :model do
          expect(@item.errors.full_messages).to include("Price must be less than 9999999")
        end
        it 'category_idで1が選択された場合は登録されない' do
-         @item.category_id      ='1'
+         @item.category_id      = 1
          @item.valid?
          expect(@item.errors.full_messages).to include("Category must be other than 1")
        end
        it 'status_idで1が選択された場合は登録されない' do
-         @item.status_id        ='1'
+         @item.status_id        = 1
          @item.valid?
          expect(@item.errors.full_messages).to include("Status must be other than 1")
        end
        it 'delivery_fee_idで1が選択された場合は登録されない' do
-         @item.delivery_fee_id  ='1'
+         @item.delivery_fee_id  = 1
          @item.valid?
          expect(@item.errors.full_messages).to include("Delivery fee must be other than 1")
        end
        it 'area_idで1が選択された場合は登録されない' do
-         @item.area_id          ='1' 
+         @item.area_id          = 1 
          @item.valid?
          expect(@item.errors.full_messages).to include("Area must be other than 1")
        end
        it 'day_idで1が選択された場合は登録されない' do
-         @item.day_id           ='1'
+         @item.day_id           = 1
          @item.valid?
          expect(@item.errors.full_messages).to include("Day must be other than 1")
        end
