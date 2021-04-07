@@ -63,12 +63,12 @@ describe Item, type: :model do
          expect(@item.errors.full_messages).to include("Price is not a number")
        end
        it 'priceが300より少ないと登録できない' do
-         @item.price = "50"
+         @item.price = 50
          @item.valid?
          expect(@item.errors.full_messages).to include("Price must be greater than 300")
        end
        it 'priceが9999999より多いと登録できない' do
-         @item.price = "10000000"
+         @item.price = 10000000
          @item.valid?
          expect(@item.errors.full_messages).to include("Price must be less than 9999999")
        end
