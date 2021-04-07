@@ -57,11 +57,16 @@ describe Item, type: :model do
          @item.valid?
          expect(@item.errors.full_messages).to include("Price can't be blank", "Price is invalid", "Price is not a number")
        end
-       it 'priceが半角数字以外では登録できない' do
+       it 'priceが全角数字では登録できない' do
          @item.price = "１０００"
          @item.valid?
          expect(@item.errors.full_messages).to include("Price is not a number")
        end
+       it 'priceが半角英字では登録できない' do
+        @item.price = "abcdef"
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price is not a number")
+      end
        it 'priceが300より少ないと登録できない' do
          @item.price = 50
          @item.valid?
@@ -71,6 +76,31 @@ describe Item, type: :model do
          @item.price = 10000000
          @item.valid?
          expect(@item.errors.full_messages).to include("Price must be less than 9999999")
+       end
+       it 'category_idで1が選択された場合は登録されない' do
+         @item.category_id      ='1'
+         @item.valid?
+         expect(@item.errors.full_messages).to include("Category must be other than 1")
+       end
+       it 'status_idで1が選択された場合は登録されない' do
+         @item.status_id        ='1'
+         @item.valid?
+         expect(@item.errors.full_messages).to include("Status must be other than 1")
+       end
+       it 'delivery_fee_idで1が選択された場合は登録されない' do
+         @item.delivery_fee_id  ='1'
+         @item.valid?
+         expect(@item.errors.full_messages).to include("Delivery fee must be other than 1")
+       end
+       it 'area_idで1が選択された場合は登録されない' do
+         @item.area_id          ='1' 
+         @item.valid?
+         expect(@item.errors.full_messages).to include("Area must be other than 1")
+       end
+       it 'day_idで1が選択された場合は登録されない' do
+         @item.day_id           ='1'
+         @item.valid?
+         expect(@item.errors.full_messages).to include("Day must be other than 1")
        end
 
     end
