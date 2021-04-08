@@ -1,8 +1,8 @@
 class Item < ApplicationRecord
 
-  has_many :comments
+  # has_many :comments
   belongs_to :user
-  has_one :purchase_history
+  # has_one :purchase_history
   has_one_attached :image
 
   extend ActiveHash::Associations::ActiveRecordExtensions
