@@ -61,5 +61,5 @@ end
 
 gem 'devise'
 gem 'pry-rails'
-gem 'active_hash'
+gem 'active_hash', '~> 2.3.0'
 
