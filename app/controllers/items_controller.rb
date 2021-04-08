@@ -22,6 +22,16 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def destroy
+    @item = Item.find(params[:id])
+     if user_signed_in? 
+      if current_user.id == @item.user_id 
+      @item.destroy
+      redirect_to root_path
+    end
+  end
+  end
+
 
   private
 
