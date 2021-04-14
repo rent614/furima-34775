@@ -58,5 +58,15 @@ RSpec.describe ItemOrder, type: :model do
       @item_order.valid?
       expect(@item_order.errors.full_messages).to include("Phone number is invalid")
     end
+    it 'user_idが存在しないと登録できない' do
+      @item_order.user.id = ""
+      @item_order.valid?
+      expect(@item_order.errors.full_messages).to include("User id is invalid")
+    end
+    it 'item_idが存在しないと登録できない' do
+      @item_order.item.id = ""
+      @item_order.valid?
+      expect(@item_order.errors.full_messages).to include("Item id is invalid")
+    end
   end
   end

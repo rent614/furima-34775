@@ -31,7 +31,7 @@
 ### Association
 
 - belongs_to :user
-- belongs_to :items
+- belongs_to :item
 
 ## items テーブ
 
@@ -53,9 +53,9 @@
 
 ### Association
 
-- has_many :comments
+- has_many :comment
 - belongs_to :user
-- has_one :orders
+- has_one :order
 ## orders テーブル
 
 | Column            | Type       | Options     |
@@ -67,7 +67,7 @@
 
 ### Association
 - belongs_to :user
-- belongs_to :product
+- belongs_to :item
 - has_one    :item_order
 
 
@@ -87,4 +87,4 @@
 
 ### Association
 
-- belongs_to :orders
+- belongs_to :order
