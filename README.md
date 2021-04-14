@@ -17,8 +17,8 @@
 ### Association
 
 - has_many :comments
-- has_many :products
-- has_many :purchases_histories
+- has_many :items
+- has_many :orders
 
 
 
@@ -31,9 +31,9 @@
 ### Association
 
 - belongs_to :user
-- belongs_to :product
+- belongs_to :items
 
-## products テーブル
+## items テーブ
 
 | Column           | Type       | Options                        |
 | ------           | ---------- | ------------------------------ |
@@ -55,8 +55,8 @@
 
 - has_many :comments
 - belongs_to :user
-- has_one :purchase_history
-## purchase_histories テーブル
+- has_one :orders
+## orders テーブル
 
 | Column            | Type       | Options     |
 | -------           | ---------- | ----------- |
@@ -68,10 +68,10 @@
 ### Association
 - belongs_to :user
 - belongs_to :product
-- has_one    :purchase
+- has_one    :item_order
 
 
-## purchases テーブル
+## item_order テーブル
 
 | Column           | Type       | Options                        |
 | ------           | ---------- | ------------------------------ |
@@ -87,4 +87,4 @@
 
 ### Association
 
-- belongs_to :purchase_history
+- belongs_to :orders
