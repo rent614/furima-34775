@@ -33,7 +33,7 @@
 - belongs_to :user
 - belongs_to :item
 
-## items テーブ
+## items テーブル
 
 | Column           | Type       | Options                        |
 | ------           | ---------- | ------------------------------ |
@@ -68,10 +68,10 @@
 ### Association
 - belongs_to :user
 - belongs_to :item
-- has_one    :item_order
+- has_one    :address
 
 
-## item_order テーブル
+## addresses テーブル
 
 | Column           | Type       | Options                        |
 | ------           | ---------- | ------------------------------ |
