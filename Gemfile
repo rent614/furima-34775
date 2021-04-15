@@ -62,8 +62,5 @@ end
 gem 'devise'
 gem 'pry-rails'
 gem 'active_hash', '~> 2.3.0'
-<<<<<<< HEAD
 gem "aws-sdk-s3", require: false
-=======
 gem 'payjp'
->>>>>>> 358475489c1f74e2c0c19808e9564eea66af0d4b
